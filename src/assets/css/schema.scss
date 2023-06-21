@@ -1,4 +1,34 @@
-@mixin chatContainer {
-    width: 100%;
-    height: 100%;
+/* 类型: 容器 */
+@mixin chatContainer($width: 100%, $height: 100%) {
+    width: $width;
+    height: $height;
+}
+@mixin chatCusContainer($width, $height, $background, $padding: 0){
+    @include chatContainer($width, $height);
+    background: $background;
+    padding: $padding;
+}
+
+/* 类型: Flex */
+@mixin chatFlex($isColumn: false) {
+    display: flex;
+    align-items: center;
+    @if $isColumn {
+        flex-direction: column
+    }
+}
+@mixin chatFlexCenter($isColumn: false) {
+    @include chatFlex($isColumn);
+    justify-content: center;
 } 
+@mixin chatFlexBet($isColumn: false) {
+    @include chatFlex($isColumn);
+    justify-content: space-between;
+}
+
+/* 类型: 字体 */
+@mixin chatFont($size, $color: #111111, $weight: 400) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+}

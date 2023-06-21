@@ -4,10 +4,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     redirect: "/chatWebHome",
+  },
+  {
+    path: '/chatWebHome',
     name: 'ChatWebHome',
     component: () => import('../views/chatWebHome/index.vue'),
-    children: []
   },
+  {
+    path: "/chatAppHome",
+    name: 'ChatAppHome',
+    component: () => import('../views/chatAppHome/index.vue'),
+  }
 ]
 
 const router = createRouter({

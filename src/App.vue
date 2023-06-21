@@ -1,7 +1,6 @@
 <template>
   <div id="app-main">
     <router-view></router-view>
-    456
   </div>
 </template>
 
@@ -11,7 +10,8 @@
 
 <style lang="scss">
   @import "@/assets/css/schema.scss";
-  html, body, div, ul, li, p, span, a {
+  @import url(./assets/font/iconfont.css);
+  html, body, div, ul, li, p, span, a, img {
     margin: 0;
     padding: 0;
     user-select: none;
@@ -20,5 +20,12 @@
   }
   html, body, #app, #app-main {
     @include chatContainer;
+  }
+  @font-face {
+    font-family: 'Oxygen';
+    src: url("@/assets/font/Oxygen-Light.ttf");
+  }
+  body {
+    font-family: Oxygen, Arial, sans-serif;
   }
 </style>
